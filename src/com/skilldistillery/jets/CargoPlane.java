@@ -8,7 +8,20 @@ public class CargoPlane extends Jet implements CargoCarrier {
 
 	@Override
 	public void loadCargo() {
+		System.out.println(this.toString() + " ....Loading cargo.... ");
+	}
 
+	@Override
+	public String toString() {
+		return "\n" + getModel() + ", Speed => " + getSpeed() + "mph, Range => " + getRange() + ", Price => $"
+				+ getPrice() + ", Class => " + getClass().getSimpleName() + "\n";
+	}
+
+	public void fly() {
+		System.out.printf(
+				this.getClass().getSimpleName() + " Model => " + getModel() + ", Speed => " + getSpeed() + "mph, Range => "
+						+ getRange() + ", Price => $" + getPrice() + " Flight Time %.2f hours Mach= %.2f  \n",
+				flightTime(), machSpeed());
 	}
 
 }
